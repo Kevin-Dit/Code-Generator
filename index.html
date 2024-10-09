@@ -1,21 +1,649 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Generator - Kevin</title>
+    <title>Valiant Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
-    <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ZEgpZgG"
-        data-pen-title="Quick Search-Code Generator" data-user="Kevin-Soni"
-        style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-        <span>See the Pen <a href="https://codepen.io/Kevin-Soni/pen/ZEgpZgG">
-                Quick Search-Code Generator</a> by Kevin Soni (<a href="https://codepen.io/Kevin-Soni">@Kevin-Soni</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-    </p>
-    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+    <header>
+        <div class="container" style="clear: both;overflow: hidden;">
+            <div class="logo-section">
+                <a href="https://ditinteractive.com/"><img src="img/logo.svg" class="logo"></a>
+                <span>Theme <br> Documentation</span>
+            </div>
+            <a href="mailto:themesupport@ditinteractive.com" id="button-small"><svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                    width="122.88px" height="122.879px" viewBox="0 0 122.88 122.879"
+                    enable-background="new 0 0 122.88 122.879" xml:space="preserve">
+                    <g>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M61.438,0c33.929,0,61.441,27.513,61.441,61.438 c0,33.93-27.513,61.441-61.441,61.441C27.513,122.879,0,95.367,0,61.438C0,27.512,27.513,0,61.438,0L61.438,0z M61.438,28.975 c3.912,0,7.666,0.693,11.138,1.962l14.3-14.299c-7.504-4.272-16.187-6.712-25.438-6.712c-9.348,0-18.117,2.492-25.678,6.851 l14.267,14.264C53.579,29.707,57.425,28.975,61.438,28.975L61.438,28.975z M92.362,51.535c1,3.123,1.542,6.452,1.542,9.903 c0,4.016-0.732,7.863-2.068,11.414l14.267,14.268c4.356-7.561,6.852-16.33,6.852-25.682c0-8.814-2.218-17.114-6.123-24.372 L92.362,51.535L92.362,51.535z M71.056,92.455c-3.038,0.941-6.271,1.449-9.617,1.449c-3.451,0-6.78-0.543-9.903-1.543 l-14.469,14.467c7.257,3.906,15.558,6.125,24.372,6.125c8.718,0,16.927-2.17,24.125-5.992L71.056,92.455L71.056,92.455 L71.056,92.455z M30.939,72.574c-1.271-3.473-1.964-7.225-1.964-11.137c0-3.344,0.508-6.576,1.449-9.615L15.918,37.316 c-3.822,7.198-5.992,15.408-5.992,24.122c0,9.25,2.442,17.932,6.712,25.436L30.939,72.574L30.939,72.574L30.939,72.574z M83.914,61.438c0,1.107-0.081,2.195-0.235,3.26c-0.022,0.158-0.049,0.322-0.075,0.48l-0.002,0.014 c-0.932,5.545-3.896,10.4-8.096,13.775l-0.031,0.023c-0.109,0.09-0.221,0.176-0.329,0.262l-0.065,0.049 c-0.875,0.666-1.801,1.273-2.762,1.807l-0.002,0.002c-0.131,0.072-0.263,0.145-0.396,0.213l-0.048,0.027 c-0.134,0.068-0.269,0.139-0.401,0.205l-0.008,0.004c-0.997,0.498-2.041,0.924-3.104,1.268l-0.039,0.012 c-0.146,0.049-0.293,0.094-0.439,0.137l-0.022,0.006c-0.149,0.047-0.302,0.09-0.454,0.133l-0.012,0.002 c-0.932,0.254-1.888,0.451-2.846,0.582l-0.077,0.012c-0.141,0.02-0.284,0.035-0.426,0.055l-0.082,0.008 c-0.141,0.016-0.28,0.029-0.424,0.043l-0.098,0.01l-0.424,0.033l-0.072,0.006c-0.149,0.008-0.299,0.018-0.451,0.023 c-0.35,0.018-0.701,0.025-1.055,0.025c-0.474,0-0.945-0.016-1.413-0.047c-5.388-0.334-10.262-2.568-13.96-6.039l-0.002-0.002 c-0.914-0.854-1.76-1.797-2.518-2.793l-0.03-0.039c-0.09-0.117-0.181-0.24-0.27-0.361l-0.014-0.02 c-0.086-0.121-0.179-0.248-0.264-0.371l-0.014-0.021c-0.533-0.771-1.025-1.58-1.458-2.41l-0.022-0.043 c-0.063-0.123-0.125-0.248-0.186-0.369l-0.035-0.07c-0.058-0.119-0.119-0.246-0.175-0.365l-0.043-0.088 c-0.056-0.123-0.11-0.248-0.165-0.371l-0.029-0.068c-0.057-0.127-0.111-0.256-0.166-0.385l-0.032-0.08 c-0.052-0.127-0.104-0.256-0.157-0.385l-0.006-0.02c-0.222-0.58-0.426-1.174-0.603-1.77l-0.021-0.072 c-0.038-0.133-0.074-0.266-0.11-0.398l-0.025-0.088c-0.036-0.129-0.07-0.266-0.101-0.396l-0.024-0.1 c-0.032-0.125-0.063-0.256-0.09-0.381l-0.027-0.125c-0.025-0.127-0.057-0.266-0.082-0.395l-0.008-0.049 c-0.091-0.463-0.168-0.93-0.229-1.404c-0.128-0.975-0.195-1.961-0.195-2.945v-0.004c0-0.354,0.012-0.703,0.025-1.049 c0.326-7.102,3.952-13.346,9.379-17.232c7.67-4.949,18.448-4.953,26.123-0.012c5.344,3.819,8.946,9.921,9.377,16.881l0.009-0.007 C83.9,60.485,83.914,60.957,83.914,61.438L83.914,61.438L83.914,61.438z" />
+                    </g>
+                </svg> Email us for Support</a>
+        </div>
+    </header>
+    <main class="container">
+        <div class="section-wrapper">
+            <div class="sidebar">
+                <h2 style="border-bottom: 2px solid #f58424;">Topic</h2>
+                <ul>
+                    <li><a href="#header-footer">Header & Footer</a></li>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#cat-page">Category Page</a></li>
+                    <li><a href="#product-page">Product Page</a></li>
+                    <li><a href="#checkout">Checkout</a></li>
+                    <li><a href="#image">Recommended Image Dimention</a></li>
+                    <li><a href="release-notes.php" target="_blank">Release Notes & Changelog (Valiant theme)</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1 style="border-bottom: 2px solid #f58424;">Valiant Bigcommerce Theme Manual</h1>
+                <p>Valiant BigCommerce Theme is a multi-purpose theme that can be used for any type of online store. We
+                    have created 3 different variants for different types of industries. Valiant theme is tested by
+                    bigcommerce and Built with Stencil framework, latest version, and update to date. Compatible with
+                    BigCommerce latest version.</p>
+                <p>Valiant theme also supported various features of bigcommerce like mobile friendly, Schema data,
+                    Various applications supported, Page builder, Theme editor, Sidebar, Mega menu, Carousels,
+                    Newsletters, banners etc. We have tried to help our client with the documentation with a detailed
+                    explanation.</p>
+
+                <h2 id="header-footer">Header & Footer</h2>
+                <p>In your control panel, go to Storefront > My Themes, and click the blue "Customize" button to launch
+                    Theme Editor.</p>
+                <p>In the left hand column of the Theme Editor, click the panel labelled 'Header & Footer'.</p>
+                <h3>Pencil Banner </h3>
+                <img src="img/header-footer.png" alt="Header-Footer">
+
+                <p><b>Pet:</b></p>
+                <img src="img/pencil-banner-pet.png" alt="Pencil Banner">
+                <p><b>GYM:</b></p>
+                <img src="img/pencil-banner-gym.png" alt="Pencil Banner">
+                <p><b>CBD:</b></p>
+                <img src="img/pencil-banner-cbd.png" alt="Pencil Banner">
+                <p><b>Hide Pencil Banner:</b> If checked, it will hide a pencil banner, i,e.Shop 35% on your first. </p>
+                <p><b>Pencil Banner Text:</b> Pencil banner text that will be visible in all pages. Here, Shop 35% on
+                    your first.</p>
+                <p><b>Pencil Banner Link Text:</b> Add Link text in Pencil Banner Link Text. i.e. Shop Now.</p>
+                <p><b>Pencil Banner Link:</b> Add Link in Pencil Banner Link.</p>
+                <p><b>Pencil Banner Text Color:</b> Add text color in pencil banner text color.</p>
+                <p><b>Pencil Banner Background Color:</b> Add Background color in pencil banner Background color.</p>
+                <h3>Logo</h3>
+                <p><b>Logo position:</b> Aligns the logo left, center or right. Applicable for both image and header
+                    content.</p>
+                <p><b>Logo Center View :</b></p>
+                <p><b>Pet:</b></p>
+                <img src="img/logo-center.png" alt="logo">
+                <p><b>GYM:</b></p>
+                <img src="img/logo-center-gym.png" alt="logo">
+                <p><b>CBD:</b></p>
+                <img src="img/logo-center-cbd.png" alt="logo">
+                <p><b>Logo Left View :</b></p>
+                <p><b>Pet:</b></p>
+                <img src="img/logo-left.png" alt="logo">
+                <p><b>GYM:</b></p>
+                <img src="img/logo-left-gym.png" alt="logo">
+                <p><b>CBD:</b></p>
+                <img src="img/logo-left-cbd.png" alt="logo">
+                <p><b>Logo Right View :</b></p>
+                <p><b>Pet:</b></p>
+                <img src="img/logo-right.png" alt="logo">
+                <p><b>GYM:</b></p>
+                <img src="img/logo-right-gym.png" alt="logo">
+                <p><b>CBD:</b></p>
+                <img src="img/logo-right-cbd.png" alt="logo">
+                <h3>Header</h3>
+                <img src="img/header.png" alt="header">
+                <p><b>Header Style:</b> Set header style Normal or Sticky.</p>
+                <p><b>Header Background color:</b> Set background color. It will appear behind the Logo.</p>
+                <p><b>Show Compare:</b> Toggles the visibility of Show Compare.</p>
+                <img src="img/menu.png" alt="menu">
+                <p><b>Dropdown menu display mode:</b> Change Dropdown menu display Mode Simple or Alternate.</p>
+                <p><b>Simple Design:</b></p>
+                <img src="img/simple-menu.png" alt="Simple Design">
+                <p><b>Alternate Design:</b></p>
+                <img src="img/alternate-menu.png" alt="Alternate Design">
+                <p><b>Navigation Menu Design:</b> Change Navigation Menu design Simple or Compact.</p>
+                <p><b>Simple Design:</b></p>
+                <img src="img/simple-navigation.png" alt="Simple Navigation">
+                <p><b>Compact Design:</b></p>
+                <p><b>Pet</b></p>
+                <img src="img/compact-navigation.png" alt="Alternate Navigation">
+                <p><b>GYM</b></p>
+                <img src="img/compact-navigation-gym.png" alt="Alternate Navigation">
+                <p><b>CBD</b></p>
+                <img src="img/compact-navigation-cbd.png" alt="Alternate Navigation">
+                <p><b>Search Suggestion:</b></p>
+                <img src="img/search-suggestion.png" alt="Search Suggestion">
+                <img src="img/search-suggestion-code.png" alt="Search Suggestion">
+                <p><b>Create you own Code from Below Codepen File and paste it in lang.file as shown in image</b></p>
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ZEgpZgG" data-pen-title="Quick Search-Code Generator" data-user="Kevin-Soni" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/Kevin-Soni/pen/ZEgpZgG">
+                    Quick Search-Code Generator</a> by Kevin Soni (<a href="https://codepen.io/Kevin-Soni">@Kevin-Soni</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                <p><b>Manage suggestion text:</b> For text change Go to channels > Themes > Advanced > Edit Theme Files
+                    > lang > en.json and update text in quick-suggestion-1 to quick-suggestion-10.
+                </p>
+                <p><strong>Navigation Background Hover Color</strong></p>
+                <img src="img/navigation-bg-color.png" alt="Footer Pet" />
+                <p><strong>Header Cart Icon color</strong></p>
+                <img src="img/header-cart-icon-color.png" alt="Footer Pet" />
+                <p><strong>Cart counter background Color</strong></p>
+                <img src="img/counter-pet.png" alt="counter color" />
+                <p><strong>Cart counter background:</strong> Add cart counter background Color.</p>
+                <h3>Footer</h3>
+                <p><b>Pet</b></p>
+                <img src="img/pet-footer.png" alt="Footer Pet">
+                <p><b>GYM</b></p>
+                <img src="img/gym-footer.png" alt="Footer Pet">
+                <p><b>CBD</b></p>
+                <img src="img/cbd-footer.png" alt="Footer Pet">
+                <img src="img/footer-pages-pet.png" alt="Footer pages Pet">
+                <p><b>Show Pages In Footer:</b> If checked, pages will appear in the footer.</p>
+                <p><b>Show Categories In Footer:</b> If checked, Categories will appear in the footer.</p>
+                <p><b>Newsletter popup</b></p>
+                <img src="img/newsletter-popup.png" alt="Newsletter Popup">
+                <p><b>Show Newsletter Popup:</b> If checked, it will appear as a newsletter popup. if unchecked then the
+                    newsletter appears in the footer.</p>
+                <p><b>Newsletter Popup Image:</b> Add Image path in Newsletter Popup Image. <small><a
+                            href="#note">(please check image related details at the last of this documents)</a></small>
+                </p>
+                <img src="img/footer-bg.png" alt="Footer Background">
+                <p><b>Footer Background color:</b> Add color code in Footer background. </p>
+                <img src="img/footer-links.png" alt="Footer">
+                <p><b>Pet</b></p>
+                <img src="img/Footer-mail-pet.png" alt="Footer Pet">
+                <p><b>GYM</b></p>
+                <img src="img/Footer-mail-gym.png" alt="Footer Pet">
+                <p><b>CBD</b></p>
+                <img src="img/Footer-mail-cbd.png" alt="Footer Pet">
+
+                <p><b>Show Footer Blog:</b> Toggles the visibility of Show Blog Link in footer.</p>
+                <p><b>Footer Blog link:</b> Add Blog Link, it will be visible in footer.</p>
+                <p><b>Footer Email:</b> Add email address, it will be visible in footer.</p>
+                <p><b>Footer Link Hover:</b> Add footer link hover color.</p>
+                <p><b>Footer Link Color:</b> Add footer Link color.</p>
+                <p><b>Pet</b></p>
+                <img src="img/footer-copy-right-pet.png" alt="Footer Pet">
+                <p><b>GYM</b></p>
+                <img src="img/footer-copy-right-gym.png" alt="Footer Pet">
+                <p><b>CBD</b></p>
+                <img src="img/footer-copy-right-cbd.png" alt="Footer Pet">
+                <p><b>Copyright Background Color:</b> Add copyright background color. </p>
+                <p><b>Copyright Text Color:</b> Add copyright text color.</p>
+                <img src="img/phone-number.png" alt="Phone Number">
+                <p><b>Phone Number:</b> Add phone number in Admin Panel settings > store profile.</p>
+                <h2 id="home">Home Page</h2>
+                <p>In your control panel, go to Storefront > My Themes, and click the blue "Customize" button to launch
+                    Theme Editor.</p>
+                <p>In the left hand column of the Theme Editor, click the panel labelled 'Home Page'.</p>
+                <h3>Hero Carousel Section</h3>
+                <img src="img/home.png" alt="Home page">
+
+                <p>For PET: <br>
+                    Upload an image as image object on the left side. So, image content will appear clearly. i.e. <br>
+                    <img src="img/banner-pet-d.png" alt="banner">
+                </p>
+                <p>For GYM: <br>
+                    Upload an image as image object on the left side. So, image content will appear clearly. i.e. <br>
+                    <img src="img/banner-gym-d.png" alt="banner">
+                </p>
+                <p>For CBD: <br>
+                    Upload an image as image object on the right side. So, image content will appear clearly. i.e. <br>
+                    <img src="img/banner-cbd-d.png" alt="banner">
+                </p>
+                <h3>Category Section</h3>
+                <p><b>Pet</b></p>
+                <img src="img/category.png" alt="Category Section">
+                <p><b>GYM</b></p>
+                <img src="img/category-gym.png" alt="Category Section">
+                <p><b>CBD</b></p>
+                <img src="img/category-cbd.png" alt="Category Section">
+                <img src="img/category-bg-color.png" alt="Category Admin">
+                <ul>
+                    <li><b>Show Custom Category Section:</b> Toggles the visibility of Show Custom category section.
+                    </li>
+                    <li><b>Category Title Color:</b> Add category Title Color.</li>
+                    <li><b>Category Button Color</b> Add category Button Color.</li>
+                    <li><b>Category Background Color</b> Add category Background Color.</li>
+                    <li><b>Category Description Color</b> Add category Description Color.</li>
+                    <li><b>Button Text:</b> Add Button Text in Category Link Text i.e. “Shop Now”. </li>
+                    <li><b>Category Image:</b> Add image path in Category Image. <small><a href="#note">(please check
+                                image related details at the last of this documents)</a></small></li>
+                    <li><b>Category Title:</b> Add category Title in Category Title.</li>
+                    <li><b>Category Description:</b> Add category Description in Category Description.</li>
+                    <li><b>Category Link:</b> Add category Link in Category Link.</li>
+                </ul>
+                <h3>Discover Favorites</h3>
+                <p><b>Pet</b></p>
+                <img src="img/discover-pet.png" alt="Category Section">
+                <p><b>GYM</b></p>
+                <img src="img/discover-gym.png" alt="Category Section">
+                <p><b>CBD</b></p>
+                <img src="img/discover-cbd.png" alt="Category Section">
+                <p>You can add featured products in the discover favorites section as per default bigcommerce feature.
+                </p>
+                <img src="img/feature-gym-heading.png" alt="Most Popular">
+                <p>Go to channels > Themes > Advanced > Edit Theme Files > lang > en.json.</p>
+                <p><b>Discover Favorites Heading:</b> Update heading in products > featured.</p>
+                <p><b>Discover Favorites Sub Heading(only for GYM):</b> Update sub heading in products >
+                    featuredsubheading.<br> </p>
+                <!--<h3>Top  selling Products</h3>
+				<p>You can add top seller products in the top selling product section as per default bigcommerce feature.</p>-->
+                <h3>Most Popular Products</h3>
+                <p><b>Pet</b></p>
+                <img src="img/most-popular-pet.png" alt="Most Popular">
+                <p><b>GYM</b></p>
+                <img src="img/most-popular-gym.png" alt="Most Popular">
+                <p><b>CBD</b></p>
+                <img src="img/most-popular-cbd.png" alt="Most Popular">
+                <ul>
+                    <img src="img/most-popular-admin.png" alt="Most popular">
+                    <li><b>Show Custom Most Popular Products:</b> Toggles the visibility of Show Custom Most Popular.
+                    </li>
+                    <img src="img/most-popularimage-pet.png" alt="Most popular">
+                    <li><b>Most Popular Images:</b> Add image path in Most Popular First Image And Most Popular Second
+                        image.</li>
+                    <li>First, you need to head over to "Storefront > Image Manager" and then upload your images here
+                    </li>
+                    <img src="img/image-manager.png" alt="Image Manager">
+                    <li>Then once uploaded, click "View Full Size" to open the image in a new tab and copy the path to
+                        that image url.</li>
+                    <img src="img/image-path.png" alt="Image Path">
+                    <li><b>Add Products:</b> Add product Id in product id.</li>
+                    <li>Right click on the product image of a particular product you want to show in the section and
+                        open it in a new tab: </li>
+                    <img src="img/product-id-admin.png" alt="Product ID">
+                    <li>That image will open in a new tab. Find product ID right after "/products/" in the image URL.
+                    </li>
+                    <img src="img/path.png" alt="Product path">
+                    <li><b>Add Product Position:</b> Add position of product from Top and Left side in top position and
+                        left position.</br>
+                        Note: Same settings for each image.</li>
+                    <img src="img/mostpopular-gym-heading.png" alt="Product ID">
+                    <li>Go to channels > Themes > Advanced > Edit Theme Files > lang > en.json.</li>
+                    <li><b>Most Popular Products Heading:</b> Update heading in products > customtop.</li>
+                    <li><b>Most Popular Products Sub Heading(only for GYM):</b> Update sub heading in products >
+                        customtopsubheading.<br> </li>
+                </ul>
+                </ul>
+                <h3>The Latest Arrivals</h3>
+                <p><b>Pet</b></p>
+                <img src="img/latest-pet.png" alt="Category Section">
+                <p><b>GYM</b></p>
+                <img src="img/latest-gym.png" alt="Category Section">
+                <p><b>CBD</b></p>
+                <img src="img/latest--cbd.png" alt="Category Section">
+                <p>You can add New products in the latest arrivals section as per default bigcommerce feature. </p>
+                <h3>2000+ Brands in Stock</h3>
+                <p><b>Pet</b></p>
+                <img src="img/brand.png" alt="Brands">
+                <p><b>GYM</b></p>
+                <img src="img/brand-gym.png" alt="Brands">
+                <p><b>CBD</b></p>
+                <img src="img/brands-cbd.png" alt="Brands">
+                <img src="img/brand-new-image.png" alt="Brands">
+                <p><b>Show Brands Section:</b> Toggles the visibility of the Show Brand Section.</p>
+                <img src="img/image-manager.png" alt="Image Manager">
+                <p><b>Add Brand Images:</b> First, you need to head over to "Storefront > Image Manager" and then upload
+                    your images here.</p>
+                <p>Then once uploaded, click "View Full Size" to open the image in a new tab and copy the path to that
+                    image url. </p>
+                <img src="img/theme-file-path.png" alt="File edite">
+                <p>Go to channels > Themes > Advanced > Edit Theme Files > lang > en.json.</p>
+                <p>Then paste the image url in “brandsection” brandimage1 to brandimage12 </p>
+                <img src="img/brand-file.png" alt="Brand">
+                <p><b>Brand Section Heading:</b> Add Heading in “brandsection” > heading.</p>
+                <p><b>Brand Link:</b> Add brand image link in “brandsection” brand-link1 to brand-link12 </p>
+                <h3>About Us section</h3>
+                <p><b>Pet</b></p>
+                <img src="img/about.png" alt="About">
+                <p><b>GYM</b></p>
+                <img src="img/about-us-gym.png" alt="About">
+                <p><b>CBD</b></p>
+                <img src="img/about-us-cbd.png" alt="About">
+                <img src="img/about-us-new.png" alt="About Us">
+                <p><b>Show About Us Section:</b> Toggles the visibility of the Show about us.</p>
+                <p><b>Add Image:</b> Add image path in About Us Image. <small><a href="#note">(please check image
+                            related details at the last of this documents)</a></small></p>
+                <p>For below changes Go to channels > Themes > Advanced > Edit Theme Files > lang > en.json. </p>
+                <img src="img/about-lang.png" alt="About">
+                <p><b>Heading:</b> Add Heading in AboutUsSection > title. </p>
+                <p><b>About Us Text:</b> Add summary in AboutUsSection > summary.</p>
+                <p><b>Read More Text:</b> Add text in AboutUsSection > read_more.</p>
+                <p><b>Read More Text link:</b> Add Link in AboutUsSection > read_more_link.</p>
+                <h3>Testimonial Section</h3>
+                <p><b>Pet</b></p>
+                <img src="img/testimonials.png" alt="Testimonials">
+                <p><b>GYM</b></p>
+                <img src="img/testimonial-gym.png" alt="Testimonials">
+                <p><b>CBD</b></p>
+                <img src="img/testimonial-cbd.png" alt="Testimonials">
+                <img src="img/testimonial-bg-color.png" alt="Testimonials">
+                <p><b>Show Testimonial Section:</b> Toggles the visibility of the Show Testimonial.</p>
+                <p><b>Testimonial Background Color:</b>Add Testimonial Background Color.</p>
+                <p><b>Testimonial Text Color:</b>Add Testimonial Text Color.</p>
+                <p>For below changes Go to channels > Themes > Advanced > Edit Theme Files > lang > en.json.</p>
+                <img src="img/testimonials-file.png" alt="Testimonials">
+                <p><b>Testimonial Heading:</b> Update heading in testimonial > heading & subheading.<br>
+                    For CBD Theme Update heading in “cbdheading”.</p>
+                <p><b>See All Review Link Text:</b> Add Text in “allreview”.</p>
+                <p><b>See All Review Link:</b> Add Link in “allreviewlink”.</p>
+                <p><b>Testimonial Review Text:</b> Add Review text in firsttestimonial to fifthtestimonial.</p>
+                <p><b>Testimonial Image:</b> Add Image URL in firstimageicon to fifthimageicon. <small><a
+                            href="#note">(please check image related details at the last of this documents)</a></small>
+                </p>
+                <p><b>Testimonial Author Name:</b> Add author name in firstname to fifthname.</p>
+                <p><b>Testimonial Author Designation:</b> Add author designation in firstdesignation to
+                    fifthdesignation.</p>
+                <p><b>Testimonial Rating:</b> Add rating in rating1 to rating5.</p>
+                <h2 id="cat-page">Category Page</h2>
+                <p>Banner on category page will come from marketing banner </p>
+                <p><b>Pet</b></p>
+                <img src="img/banners.png" alt="Banners">
+                <p><b>GYM</b></p>
+                <img src="img/marketing-banner-gym-new-new.png" alt="Banners">
+                <p><b>CBD</b></p>
+                <img src="img/marketing-banner-cbd.png" alt="Banners">
+                <p>You have to create a banner, add an image and assign it to a particular category in which you want to
+                    show the image. </p>
+                <img src="img/banner-img.png" alt="Banner">
+                <img src="img/banner-details.png" alt="Banner">
+                <p><b>Set Position:</b> Set Banner position in Placement DropDown. </p>
+                <p>All the subcategories will be visible on it parent category page with its category image like this.
+                </p>
+                <img src="img/subcate.png" alt="Sub Category">
+                <img src="img/sub-categories-settings.png" alt="Sub Category">
+                <p><strong>Show Subcategories:</strong> You can turn on and turn off subcategories from the theme
+                    settings.</p>
+                <img src="img/list-grid.png" alt="List Grid">
+
+                <p>Manage List view / Grid View for category page.</p>
+                <p><b>Gid View</b></p>
+                <p><b>Pet</b></p>
+                <img src="img/grid.png" alt="Grid">
+                <p><b>GYM</b></p>
+                <img src="img/grid-view-gym.png" alt="Grid">
+                <p><b>CBD</b></p>
+                <img src="img/grid-view-cbd.png" alt="Grid">
+                <p><b>List View</b></p>
+                <p><b>Pet</b></p>
+                <img src="img/list.png" alt="List">
+                <p><b>GYM</b></p>
+                <img src="img/list-view-gym.png" alt="List">
+                <p><b>CBD</b></p>
+                <img src="img/list-view-cbd.png" alt="List">
+                <h3>Sidebar Image</h3>
+                <p><b>Pet</b></p>
+                <img src="img/sidebar.png" alt="Sidebar Image">
+                <p><b>GYM</b></p>
+                <img src="img/sidebar-gym.png" alt="Sidebar Image">
+                <p><b>CBD</b></p>
+                <img src="img/sidebar-cbd.png" alt="Sidebar Image">
+                <img src="img/sidebar-admin.png" alt="Sidebar Image">
+                <p><b>Category Page Side Banner:</b> Add Image path in Category Page Side Banner. <small><a
+                            href="#note">(please check image related details at the last of this documents)</a></small>
+                </p>
+                <h2 id="product-page">Product Page</h2>
+                <h3>Offer Text</h3>
+                <img src="img/product-display.png" alt="product">
+                <img src="img/product.png" alt="product">
+
+                <p><b>Show Offer Text:</b> Toggles the visibility of Show Pdp Offer text.</p>
+                <p><b>Offer Text:</b> Add Text in Pdp Offer text. I.e.. Save Extra 35% Off on First Order.</p>
+                <p><b>Offer Text Link:</b> Add page link in Pdp Offer link.</p>
+                <h3>Add To Cart Style</h3>
+                <img src="img/addtocart.png" alt="Add to Cart">
+                <p><b>Pet</b></p>
+                <img src="img/addto-cart-pet.png" alt="Add to Cart">
+                <p><b>GYM</b></p>
+                <img src="img/addto-cart-gym.png" alt="Add to Cart">
+                <p><b>CBD</b></p>
+                <img src="img/addto-cart-cbd.png" alt="Add to Cart">
+
+                <p><b>Add To Cart Style:</b> Select style of Add to Cart button for fixed or Normal. </p>
+                <!--<img src="img/avaibility.png" alt="Availability">
+					<p><b>Show Product Availability:</b>  Add Availability text in “Availability Text “ from product Admin.</p>-->
+                <h3>Custom Tab</h3>
+                <img src="img/custom-tab.png" alt="custom-tab">
+                <img src="img/custom-tab-admin.png" alt="custom-tab-admin">
+                <p><b>Product Custom Fields in Tabs:</b> Toggles the visibility of Product custom fields in tabs.</p>
+                <p><b>Product Custom Field Tab Label:</b> Add tab name in Product custom fields tab label.</p>
+                <p><b>Product Description Tab:</b> Add Description of product.</p>
+                <p><b>Pet</b></p>
+                <img src="img/description-pet.png" alt="Description">
+                <p><b>GYM</b></p>
+                <img src="img/description-gym.png" alt="Description">
+                <p><b>CBD</b></p>
+                <img src="img/description-cbd.png" alt="Description">
+                <p>To add description in the same style then add Below HTML structure in description</p>
+                <img src="img/des-1.png" alt="Description">
+                <img src="img/des-2.png" alt="Description">
+                <p>Don't change any HTML tags or remove any class. You can edit Description, Image and Link.</p>
+                <h3>Make It Bundle Section</h3>
+                <img src="img/makeitbundle.png" alt="Make It Bundle">
+                <img src="img/makeitbundle-admin.png" alt="Make It Bundle">
+
+                <p><b>Show Side Related Product:</b> Toggles the visibility of Show Side Related Product.</p>
+                <h2 id="checkout">Checkout</h2>
+                <img src="img/checkout-admin.png" alt="checkout">
+                <p><b>Pet</b></p>
+                <img src="img/checkout.png" alt="checkout">
+                <p><b>GYM</b></p>
+                <img src="img/Checkout-Valiant-Gym.png" alt="Grid">
+                <p><b>CBD</b></p>
+                <img src="img/Checkout-Valiant-CBD.png" alt="Grid">
+
+                <p id="note"><b>Show Header & Footer In Checkout Page Same As Site Pages:</b> Toggles the visibility of
+                    Show header & footer.</p>
+                <p><strong>Note:</strong></p>
+                <p><strong> Steps to add image in Image Manager.</strong> </p>
+                <ul>
+                    <li><span><strong>1. Go to Storefront > Image Manager Upload image</strong></span><br>
+                        <span><strong>2. Copy image path</strong></span><br>
+                    </li>
+                </ul>
+                <h2 id="image">Image Dimension</h2>
+                <h3>Valiant Pet Variant : </h3>
+                <ol>
+                    <li>Logo Size: 250px X 60px</li>
+                    <img src="img/logo-size.png" alt="logo">
+                    <li>Hero Carousel Image: 1920px X 770px</li>
+                    <img src="img/banner-pet-d.png" alt="banner">
+                    <li>Category images:
+                        <ul>
+                            <li>top 3 images 580px X 580px</li>
+                            <img src="img/cat-top-pet-d.png" alt="category">
+                            <li>Bottom 2 images: 895px X 580px</li>
+                            <img src="img/cat-btm-pet-d.png" alt="category">
+                        </ul>
+                    </li>
+                    <li>Most popular image: 1640px X 690px</li>
+                    <img src="img/most-popular-pet.png" alt="Most Popular">
+                    <li>Brand Images: 127px X 86px</li>
+                    <img src="img/brand-pet-d.png" alt="Brand">
+                    <li>About image: 830px X 550px</li>
+                    <img src="img/about-pet-d.png" alt="about">
+                    <li>Testimonial images: 60px X 60px</li>
+                    <img src="img/testimonials-pet-d.png" alt="testimonials">
+                    <li>Subcategory image: 166px X 166px</li>
+                    <img src="img/category-sub-pet.png" alt="product">
+                    <li>Product images (standard dimensions): 1280px X 1280px</li>
+                    <img src="img/product-pet.png" alt="product">
+                </ol>
+                <h3>Valiant GYM Variant : </h3>
+                <ol>
+                    <li>Logo Size: 250px X 60px</li>
+                    <img src="img/logo-size-gym.png" alt="logo">
+                    <li>Hero Carousel Image: 1920px X 470px</li>
+                    <img src="img/banner-gym-d.png" alt="banner">
+                    <li>Category images:
+                        <ul>
+                            <li>top 2 images 900px X 390px</li>
+                            <img src="img/cat-top-gym-d.png" alt="category">
+                            <li>Bottom 3 images: 885px X 390px</li>
+                            <img src="img/cat-btm-gym-d.png" alt="category">
+                        </ul>
+                    </li>
+                    <li>Most popular image: 1640px X 690px</li>
+                    <img src="img/most-popular-gym.png" alt="Most Popular">
+                    <li>Brand Images: 127px X 86px</li>
+                    <img src="img/brand-gym-d.png" alt="Brand">
+                    <li>About image: 830px X 550px</li>
+                    <img src="img/about-gym-d.png" alt="about">
+                    <li>Testimonial images: 60px X 60px</li>
+                    <img src="img/testimonials-gym-d.png" alt="testimonials">
+                    <li>Subcategory image: 171px X 171px</li>
+                    <img src="img/category-sub-gym.png" alt="product">
+                    <li>Product images (standard dimensions): 1280px X 1280px</li>
+                    <img src="img/product-gym.png" alt="product">
+                </ol>
+                <h3>Valiant CBD Variant : </h3>
+                <ol>
+                    <li>Logo Size: 250px X 60px</li>
+                    <img src="img/logo-size-cbd.png" alt="logo">
+                    <li>Hero Carousel Image: 1920px X 780px</li>
+                    <img src="img/banner-cbd-d.png" alt="banner">
+                    <li>Category images:
+                        <ul>
+                            <li>Left image 510px X 680px</li>
+                            <img src="img/cat-top-cbd-d.png" alt="category">
+                            <li>Right 4 images: 510px X 310px</li>
+                            <img src="img/cat-btm-cbd-d.png" alt="category">
+                        </ul>
+                    </li>
+                    <li>Most popular image: 1920px X 690px</li>
+                    <img src="img/most-popular-cbd.png" alt="Most Popular">
+                    <li>Brand Images: 127px X 86px</li>
+                    <img src="img/brand-cbd-d.png" alt="Brand">
+                    <li>About image: 788x X 573px</li>
+                    <img src="img/about-cbd-d.png" alt="about">
+                    <li>Testimonial images: 60px X 60px</li>
+                    <img src="img/testimonials-cbd-d.png" alt="testimonials">
+                    <li>Subcategory image: 168px X 190px</li>
+                    <img src="img/category-sub-cbd.png" alt="product">
+                    <li>Product images (standard dimensions): 1280px X 1280px</li>
+                    <img src="img/product-cbd.png" alt="product">
+                </ol>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Dit Interactive Pvt. Ltd. All Rights Reserved.</p>
+    </footer>
+    <div class="form-popup" style="display: none;">
+        <div class="popup-wrapper">
+            <img src="img/form-img.png" class="form-img">
+            <div class="right-form">
+                <form name="contactus" method="POST" enctype="multipart/form-data">
+                    <h2>Theme Support</h2>
+                    <div class="form-box">
+                        <section class="form-section">
+                            <div>
+                                <input type="text" name="first-name" placeholder="Name" size="40" class="form-input"
+                                    aria-required="true" aria-invalid="false">
+                            </div>
+                            <div>
+                                <input type="email" name="your-email" placeholder="Email" size="40" class="form-input"
+                                    aria-required="true" aria-invalid="false">
+                            </div>
+                            <div>
+                                <input type="text" name="budget" placeholder="Estimated Budget" size="40"
+                                    class="form-input" aria-invalid="false">
+                            </div>
+                            <div>
+                                <select name="Engagement" class="form-input" aria-invalid="false">
+                                    <option value="Choose option">Engagement</option>
+                                    <option value="Monthly dedicated">Monthly dedicated</option>
+                                    <option value="Hourly">Hourly</option>
+                                    <option value="Fixed Cost">Fixed Cost</option>
+                                    <option value="Open to suggestion">Open to suggestion</option>
+                                </select>
+                            </div>
+                            <textarea name="your-message" placeholder="Message" cols="40" rows="10" class="form-input"
+                                aria-required="true" aria-invalid="false"></textarea>
+                            <button type="submit" class="support-btn" id="submit-btn">Submit</button>
+                        </section>
+                        <section class="message-section">
+                        </section>
+                    </div>
+                </form>
+                <button class='support-btn' id='back-btn' style='display:none'>Back</button>
+                <a href="javascript:;" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                        width="15px" height="15px" fill="#fff" viewBox="0 0 121.31 122.876"
+                        enable-background="new 0 0 121.31 122.876" xml:space="preserve">
+                        <g>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M90.914,5.296c6.927-7.034,18.188-7.065,25.154-0.068 c6.961,6.995,6.991,18.369,0.068,25.397L85.743,61.452l30.425,30.855c6.866,6.978,6.773,18.28-0.208,25.247 c-6.983,6.964-18.21,6.946-25.074-0.031L60.669,86.881L30.395,117.58c-6.927,7.034-18.188,7.065-25.154,0.068 c-6.961-6.995-6.992-18.369-0.068-25.397l30.393-30.827L5.142,30.568c-6.867-6.978-6.773-18.28,0.208-25.247 c6.983-6.963,18.21-6.946,25.074,0.031l30.217,30.643L90.914,5.296L90.914,5.296z" />
+                        </g>
+                    </svg></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('header .support-btn').click(function (e) {
+                $('.form-popup').fadeIn();
+            });
+            $('.form-popup .close-btn').click(function (e) {
+                $('.form-popup').fadeOut();
+            });
+        });
+
+
+        $("#back-btn").click(function (e) {
+            $('.message-section').empty();
+            $('.form-section').show();
+        });
+        $("#back-btn").on("click", function () {
+            $('.message-section').empty();
+            $('.form-section').show();
+            $('#back-btn').hide();
+        });
+
+
+        $("form[name='contactus']").submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: "form.php",
+                type: "POST",
+                data: $(this).serialize(),
+                beforeSend: function () {
+                    $('.support-btn').attr('disabled', true);
+                    $('#submit-btn').text('Sending...');
+                },
+                success: function (data) {
+                    $('.support-btn').attr('disabled', false);
+                    $('#submit-btn').text('Submit');
+                    respo = JSON.parse(data)
+                    if (respo.status == 1) {
+                        $("form[name='contactus']")[0].reset();
+                        $('.form-section').hide();
+                        $('.message-section').html("<h2><i>Thank You!</i></h2>");
+                        $('#back-btn').show();
+                    } else {
+                        $('.form-section').hide();
+                        $('.message-section').html("<h2><i>Sorry Try Again!!!</i></h2>");
+                        $('#back-btn').show();
+                    }
+                }
+            });
+        });
+
+
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/596578.js"></script>
+    <!-- End of HubSpot Embed Code -->
 </body>
 
 </html>
